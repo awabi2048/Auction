@@ -26,8 +26,8 @@ data modify storage auction: Status set value Idle
 
 scoreboard players reset @a[tag=Auction.Participant] AuctionBid
 
-scoreboard players set $BidTop AuctionBid -1
-scoreboard players set $BidMin AuctionBid -1
+scoreboard players set $BidTop AuctionBid 0
+scoreboard players set $BidMin AuctionBid 0
 
 tag @a remove Auction.Participant
 tag @a remove Auction.TopBidder
