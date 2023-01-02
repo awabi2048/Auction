@@ -24,12 +24,10 @@ scoreboard players set $Timer Auction -1
 
 data modify storage auction: Status set value Idle
 
-scoreboard players set @a AuctionBid -1
+scoreboard players reset @a[tag=Auction.Participant] AuctionBid
+
 scoreboard players set $BidTop AuctionBid -1
+scoreboard players set $BidMin AuctionBid -1
 
 tag @a remove Auction.Participant
 tag @a remove Auction.TopBidder
-
-# プラグイン関係
-execute at @e[tag=Auction.BidPerm.Remove] run setblock ~ ~ ~ redstone_block
-execute at @e[tag=Auction.BidPerm.Remove] run setblock ~ ~ ~ stone
