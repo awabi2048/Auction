@@ -1,4 +1,4 @@
-# 緊急時キャンセル
+# 途中キャンセル
 # 告知
 tellraw @a[tag=Auction.Participant] [{"text":"[","color": "white"},{"text":"Auction","color": "dark_purple"},{"text":"] ","color": "white"},{"text":"オークションをキャンセルしました。","color": "red","bold": false}]
 

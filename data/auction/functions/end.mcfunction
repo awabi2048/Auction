@@ -16,18 +16,21 @@ execute unless entity @a[tag=Auction.TopBidder] run tellraw @a[tag=Auction.Parti
 title @a[tag=Auction.Participant] subtitle " "
 
 # もろもろリセット
+data modify storage auction: Status set value Idle
+
+# 各種タイマー
 bossbar remove auction:bid_timer
 
 scoreboard players set $EndTimer Auction -1
 scoreboard players set $BidTimer Auction -1
 scoreboard players set $Timer Auction -1
 
-data modify storage auction: Status set value Idle
-
-scoreboard players reset @a[tag=Auction.Participant] AuctionBid
+# 入札金額
+scoreboard players set @a[tag=Auction.Participant] AuctionBid 0
 
 scoreboard players set $BidTop AuctionBid 0
 scoreboard players set $BidMin AuctionBid 0
+
 
 tag @a remove Auction.Participant
 tag @a remove Auction.TopBidder
