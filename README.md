@@ -1,4 +1,4 @@
-## Auction For KotaServer
+## Auction System
 
 ### 概要
 マルチプレイサーバー「こたサーバー」向けに制作された、オークションシステムです。
