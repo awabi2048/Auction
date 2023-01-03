@@ -17,7 +17,7 @@ execute at @e[tag=Auction.Core] unless entity @e[tag=Auction.Seller] run tellraw
 scoreboard players add $SellerCount Auction 1
 
 execute store result score $EntriedCount Auction if entity @a[tag=Auction.Entried]
-execute if score $EntriedCount Auction matches 0 run scoreboard players set $SellerCount Auction 0
+execute if score $EntriedCount Auction matches 0 run scoreboard players set $SellerCount Auction -1
 
 # 後処理
 tag @a remove Auction.Seller
