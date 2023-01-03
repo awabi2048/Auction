@@ -1,7 +1,7 @@
 # スコアボード定義
 scoreboard objectives add Auction dummy
 
-scoreboard objectives add Auction.EntryNumber dummy
+scoreboard objectives add Auction.EntryNumber dummy {"text":"エントリー番号","color": "white","bold": true}
 
 
 scoreboard objectives add AuctionBid dummy

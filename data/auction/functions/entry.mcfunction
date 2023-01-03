@@ -1,4 +1,10 @@
 # 出品エントリー
+# そもそもエントリー期間内?
+execute unless data storage auction: {AllowEntry:true} run tellraw @s [{"text":"[","color": "white"},{"text":"Auction","color": "dark_purple"},{"text":"] ","color": "white"},{"text":"現在はエントリー受付期間外です。","color": "white"}]
+execute unless data storage auction: {AllowEntry:true} run playsound entity.experience_orb.pickup master @s ~ ~ ~ 1 0.5
+
+execute unless data storage auction: {AllowEntry:true} run function auction:stop_process
+
 # エントリーしてないよ
 execute if predicate auction:is_sneaking unless entity @s[tag=Auction.Entried] run tellraw @s [{"text":"[","color": "white"},{"text":"Auction","color": "dark_purple"},{"text":"] ","color": "white"},{"text":"まだエントリーしていません。","color": "red"}]
 execute if predicate auction:is_sneaking unless entity @s[tag=Auction.Entried] run playsound entity.experience_orb.pickup master @s ~ ~ ~ 1 0.5
@@ -27,3 +33,6 @@ tag @s add Auction.Entried
 
 tellraw @s [{"text":"[","color": "white"},{"text":"Auction","color": "dark_purple"},{"text":"] ","color": "white"},{"text":"エントリーが完了しました。あなたのエントリー番号は","color": "white"},{"score":{"name": "@s","objective": "Auction.EntryNumber"},"color": "green"},{"text": "です。","color": "white"}]
 playsound entity.experience_orb.pickup master @s ~ ~ ~ 1 1
+
+# サイドバー設定
+scoreboard objectives setdisplay sidebar Auction.EntryNumber
