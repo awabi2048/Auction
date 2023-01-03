@@ -15,7 +15,7 @@ execute at @e[tag=Auction.Core] if score $SellerCount Auction matches 1.. run te
 scoreboard players add $SellerCount Auction 1
 
 execute store result score $EntriedCount Auction if entity @a[tag=Auction.Entried]
-execute if score $EntriedCount Auction matches 0 run scoreboard players reset $SellerCount Auction
+execute if score $EntriedCount Auction matches 0 run scoreboard players set $SellerCount Auction 0
 
 # 後処理
 tag @a remove Auction.Seller
