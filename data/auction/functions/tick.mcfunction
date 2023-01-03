@@ -25,7 +25,7 @@
     execute if score $Timer Auction matches 60 at @a[tag=Auction.Participant] run playsound block.note_block.pling master @a[tag=Auction.Participant] ~ ~ ~ 2 1 
     execute if score $Timer Auction matches 40 at @a[tag=Auction.Participant] run playsound block.note_block.pling master @a[tag=Auction.Participant] ~ ~ ~ 2 1.5
 
-    execute if score $Timer Auction matches 0 run function auction:end
+    execute if score $Timer Auction matches 0 run function auction:on_event/bid/end
 
 # 最高入札者表示
 execute if data storage auction: {Status:Active} if entity @a[tag=Auction.TopBidder] run title @a[tag=Auction.Participant] title "" 
