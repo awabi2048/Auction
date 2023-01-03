@@ -9,7 +9,7 @@ execute if score $Countdown Auction matches 1.. at @e[tag=Auction.Core] run play
 execute if score $Countdown Auction matches 0 at @e[tag=Auction.Core] run playsound block.note_block.pling master @a[tag=Auction.Participant] ~ ~ ~ 5 1
 
 # 開始時
-execute if score $Countdown Auction matches 0 run function auction:setup
+execute if score $Countdown Auction matches 0 run function auction:on_event/bid/setup
 execute if score $Countdown Auction matches 0 run scoreboard players set $Countdown Auction -1
 
-execute if score $Countdown Auction matches 1.. run schedule function auction:countdown 1s
+execute if score $Countdown Auction matches 1.. run schedule function auction:on_event/bid/countdown 1s

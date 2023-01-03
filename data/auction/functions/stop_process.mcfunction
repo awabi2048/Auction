@@ -1,0 +1,1 @@
+function auction:stop_process

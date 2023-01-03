@@ -1,6 +1,9 @@
 # スコアボード定義
 scoreboard objectives add Auction dummy
 
+scoreboard objectives add Auction.EntryNumber dummy
+
+
 scoreboard objectives add AuctionBid dummy
 scoreboard objectives add AuctionBid.Temp dummy
 
@@ -8,6 +11,10 @@ scoreboard objectives add AuctionBid.Temp dummy
 scoreboard players set #10 Auction 10
 scoreboard players set #20 Auction 20
 scoreboard players set #60 Auction 60
+
+scoreboard players set #99 Auction 99
+
+scoreboard players set #127 Auction 127
 
 # 各種変数定義
 execute unless score $BidMinUnit AuctionBid = $BidMinUnit AuctionBid run scoreboard players set $BidMinUnit AuctionBid 100

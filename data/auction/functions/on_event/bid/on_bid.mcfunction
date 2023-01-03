@@ -1,6 +1,6 @@
 # 受付中でなければエラー & 処理停止
 execute if data storage auction: {Status:Idle} run tellraw @s [{"text":"[","color": "white"},{"text":"Auction","color": "dark_purple"},{"text":"] ","color": "white"},{"text":"エラー: 現在は入札受付時間外です。","color": "red","bold": false}]
-execute if data storage auction: {Status:Idle} run function auction:empty
+execute if data storage auction: {Status:Idle} run function auction:stop_process
 
 # 最高入札額・プレイヤー入札額更新
 scoreboard players operation @s AuctionBid = @s AuctionBid.Temp
