@@ -29,4 +29,4 @@
 
 # 最高入札者表示
 execute if data storage auction: {Status:Active} if entity @a[tag=Auction.TopBidder] run title @a[tag=Auction.Participant] title "" 
-execute if data storage auction: {Status:Active} if entity @a[tag=Auction.TopBidder] run title @a[tag=Auction.Participant] subtitle [{"text": "入札者: ","color": "white","bold": true},{"selector":"@a[tag=Auction.TopBidder]","color": "green"},{"text": ", ","color": "white","bold": true},{"text": "暫定最高入札額: ","bold": true},{"score":{"name": "$BidTop","objective": "AuctionBid"},"color": "gold","bold": true},{"text": "MP","color": "gold","bold": true}]
+execute if data storage auction: {Status:Active} if entity @a[tag=Auction.TopBidder] run title @a[tag=Auction.Participant] subtitle [{"text": "最高額入札者: ","color": "white","bold": true},{"selector":"@a[tag=Auction.TopBidder]","color": "false"},{"text": ", ","color": "white","bold": false},{"text": "金額: ","bold": true},{"nbt":"BidHighest.string","storage": "auction:","interpret": true,"color": "gold"},{"text": "MP","color": "gold","bold": false}]
